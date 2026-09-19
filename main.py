@@ -7,9 +7,6 @@ black = pygame.Color(0, 0, 0)
 clock = pygame.time.Clock()
 pygame.display.set_caption("Snake Game")
 snake = Snake()
-
-
-pygame.init()
 running = True
 pausing = False
 score = 0 
@@ -19,6 +16,9 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.KEYDOWN:
+             snake.handle_key(event.key)
+    snake.move()
     clock.tick(60)  
     pygame.display.update()
 pygame.quit()
