@@ -26,3 +26,9 @@ class Snake:
     def move(self):
         self.snake_x += self.x_change
         self.snake_y += self.y_change
+    def hit_wall(self):
+        if self.snake_x >= 720 or self.snake_x <= 0 or self.snake_y >= 480 or self.snake_y <= 0:
+            return True 
+        else: 
+            return False
+        
